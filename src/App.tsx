@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Menu } from "antd";
+import React from "react";
+import styled from "styled-components";
 
-function App() {
+const Layout = styled.div`
+  display: flex;
+  height: 100vh;
+`;
+
+function Slider() {
+  const handleClick = (e) => {
+    console.log("click ", e);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Menu onClick={handleClick} style={{ width: 256 }} mode="inline">
+        <Menu.Item>选项一</Menu.Item>
+        <Menu.Item>选项二</Menu.Item>
+      </Menu>
+    </Layout>
   );
 }
 
-export default App;
+export default Slider;
