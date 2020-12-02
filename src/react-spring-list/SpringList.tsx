@@ -1,4 +1,3 @@
-import { render } from "react-dom";
 import React, { useRef } from "react";
 import clamp from "lodash-es/clamp";
 import swap from "lodash-move";
