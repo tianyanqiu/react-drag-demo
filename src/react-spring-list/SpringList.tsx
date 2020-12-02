@@ -49,7 +49,6 @@ function DraggableList({ items = "Lorem ipsum dolor sit".split(" ") }) {
           key={i}
           style={{
             zIndex,
-
             top: y,
             scale,
           }}
