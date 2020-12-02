@@ -1,23 +1,37 @@
-import { Menu } from "antd";
 import React from "react";
 import styled from "styled-components";
+import { Route, BrowserRouter } from "react-router-dom";
+import routes from "./router";
+import NavList from "./NavList";
 
 const Layout = styled.div`
   display: flex;
   height: 100vh;
 `;
+const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
 
 function Slider() {
-  const handleClick = (e) => {
-    console.log("click ", e);
-  };
   return (
-    <Layout>
-      <Menu onClick={handleClick} style={{ width: 256 }} mode="inline">
-        <Menu.Item>选项一</Menu.Item>
-        <Menu.Item>选项二</Menu.Item>
-      </Menu>
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <NavList />
+        <Content>
+          {routes.map((item) => (
+            <Route
+              key={item.path}
+              path={item.path}
+              component={item.component}
+              title={item.title}
+              exact={item.exact}
+            />
+          ))}
+        </Content>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
