@@ -11,7 +11,6 @@ const Layout = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
 `;
 
 function Slider() {
